@@ -1,0 +1,6 @@
+input[type="radio"] {
+    -ms-transform: scale(1.8);
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+    margin-top: 8px;
+}

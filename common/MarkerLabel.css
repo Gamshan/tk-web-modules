@@ -1,0 +1,34 @@
+.chat {
+    background-color: yellowgreen;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 1rem;
+    position: relative;
+    display: inline-block;
+    transform: translate(-50%,-48px);
+    min-width: 80px;
+    font-size: 14px;
+    max-width: 200px;
+    max-height: 35px;
+    line-height: 14px;
+}
+.chat::after {
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: currentColor;
+    border-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+.two-line-ellipsis {
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color:white;
+}

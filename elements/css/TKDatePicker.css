@@ -1,0 +1,20 @@
+
+
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container input {
+    display: block;
+    width: 100% !important;
+}
+.react-datepicker__view-calendar-icon input {
+    padding-left: 32px;
+}
+.react-datepicker__calendar-icon {
+    padding-top: 11px !important;
+}
+.react-datepicker__day--highlighted{
+    background-color: #bad9f1;
+}
