@@ -187,7 +187,7 @@ var Test = function Test() {
     console.log(lat, lng);
   };
 
-  var handleTimeChange = function handleTimeChange(time) {
+  var handleCalendarClose = function handleCalendarClose(time) {
     console.log('time', time);
   };
 
@@ -257,24 +257,16 @@ var Test = function Test() {
   }, /*#__PURE__*/_react.default.createElement(_TKDatePicker.default, {
     refer: "datePicker",
     showIcon: true,
-    selectsRange: false,
+    selectsRange: true,
     handleOnChange: handleOnChange,
+    handleCalendarClose: handleCalendarClose,
     value: createReq.datePicker,
-    dateFormat: "YYYY-MM-DD hh:mm a",
-    returnFormat: "YYYY-MM-DD hh:mm a",
-    className: 'wrapperClassName',
+    dateFormat: "MMM DD",
+    returnFormat: "YYYY-MM-DD hh:mm:ss",
+    className: 'nav-calender-picker',
     placeholder: "Select the dates",
-    handleTimeChange: handleTimeChange //For select multiple days
-    // selectsMultiple={true}
-    // disabledKeyboardNavigation={true}
-    // shouldCloseOnSelect={false}
-    //
-    // For show tome picker
-    ,
-    showTimeSelect: true,
-    handleCalendarClose: function handleCalendarClose(e) {
-      return console.log(e);
-    }
+    scrollableYearDropdown: true,
+    showYearDropdown: true
   })), /*#__PURE__*/_react.default.createElement(_MyTypeahead.default, {
     placeholder: "Select supplier",
     handleOnChange: handleOnChange,
