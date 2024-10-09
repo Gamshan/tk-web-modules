@@ -86,12 +86,10 @@ var TKDatePicker = function TKDatePicker(props) {
 
   var initialProps = {
     dateFormat: dateFormat ? dateFormat : 'yyyy-MM-dd'
-  }; // const  handleDateSelect = (val) => {
-  // };
+  };
 
   var handleCalendarClose = function handleCalendarClose() {
-    var returnValue = returnFormat && (0, _moment.default)(date).format(returnFormat) ? (0, _moment.default)(date).format(returnFormat) : date;
-    handleOnChange(returnValue, refer);
+    if (props.handleCalendarClose) props.handleCalendarClose();
   };
 
   var handleDateChange = function handleDateChange(val) {
@@ -137,7 +135,8 @@ var TKDatePicker = function TKDatePicker(props) {
     wrapperClassName: wrapperClassName || 'customDatePickerWidth',
     placeholderText: placeholder,
     highlightDates: props.selectsMultiple ? selectedDates : [date],
-    selected: date
+    selected: date,
+    onCalendarClose: handleCalendarClose
   })));
 };
 
