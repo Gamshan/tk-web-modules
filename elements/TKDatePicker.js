@@ -89,7 +89,7 @@ var TKDatePicker = function TKDatePicker(props) {
   };
 
   var handleCalendarClose = function handleCalendarClose() {
-    if (props.handleCalendarClose) props.handleCalendarClose();
+    if (props.handleCalendarClose) props.handleCalendarClose(value);
   };
 
   var handleDateChange = function handleDateChange(val) {

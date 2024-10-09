@@ -271,7 +271,10 @@ var Test = function Test() {
     //
     // For show tome picker
     ,
-    showTimeSelect: true
+    showTimeSelect: true,
+    handleCalendarClose: function handleCalendarClose(e) {
+      return console.log(e);
+    }
   })), /*#__PURE__*/_react.default.createElement(_MyTypeahead.default, {
     placeholder: "Select supplier",
     handleOnChange: handleOnChange,
