@@ -89,6 +89,11 @@ var TKDatePicker = function TKDatePicker(props) {
   };
 
   var handleCalendarClose = function handleCalendarClose() {
+    if (props.selectsRange && dateRange[1] === null) {
+      dateRange[1] = dateRange[0];
+      setDateRange(_toConsumableArray(dateRange));
+    }
+
     var selected = props.selectsMultiple ? selectedDates : props.selectsRange ? dateRange : date;
     if (props.handleCalendarClose) props.handleCalendarClose(selected);
   };
