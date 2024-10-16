@@ -179,8 +179,8 @@ var Test = function Test() {
     greeting: '<React.Fragment>Hello<a href="/${name_profile}">Hello</a></React.Fragment>'
   };
 
-  var onMarkerLabelClick = function onMarkerLabelClick(id) {
-    console.log("FFF", id);
+  var onMarkerLabelClick = function onMarkerLabelClick(id, content) {
+    console.log("FFF", id, content);
   };
 
   var onLocationSelect = function onLocationSelect(lat, lng) {
@@ -329,7 +329,7 @@ var Test = function Test() {
       longitude: 80.1255,
       latitude: 9.6615
     },
-    apiKey: "XXX",
+    apiKey: "AIzaSyBHm5OVaa6_9-ILgDZ9YSrTnaCQNT6ZXec",
     defaultZoom: 12,
     isShowInfoWindow: false,
     disableOnMarkerClick: true,
@@ -337,17 +337,45 @@ var Test = function Test() {
       className: "row ml-3 mr-3"
     }, /*#__PURE__*/_react.default.createElement("h6", {
       className: "col-md-8"
-    }, "PU : ", /*#__PURE__*/_react.default.createElement("b", null))),
-    isMarkerShown: true // isShowMarkerAsLabel={true}
-    // multipleMarkerContent={[{ lng:80.1255 , lat: 9.6615, labelStyle:{color:'black'},  style:{backgroundColor: 'yellow' }, label:'Job1 fghhh fyfyhfy fyy dsdsa da dsa ', _id : 123 },
-    //     { lng:78.6382 , lat: 9.6615, labelStyle:{color:'black'},  style:{backgroundColor: 'white' }, label:'Job1 fghhh fyfyhfy ', _id : 1234 },
-    //     {lng:80.0255 , lat: 9.6615,style:{backgroundColor:'green'}, label:'Job2', _id : 12345 }]}
-    // onMarkerLabelClick={onMarkerLabelClick}
-    // mapTypeId="hybrid"
-    //For select the location
+    }, "PU : ", /*#__PURE__*/_react.default.createElement("b", null))) // isMarkerShown={true}
     ,
-    isLocationSelectable: true,
-    onLocationSelect: onLocationSelect //search box
+    isShowMarkerAsLabel: true,
+    multipleMarkerContent: [{
+      lng: 80.1255,
+      lat: 9.6615,
+      labelStyle: {
+        color: 'black'
+      },
+      style: {
+        backgroundColor: 'yellow'
+      },
+      label: 'Job1 fghhh fyfyhfy fyy dsdsa da dsa ',
+      _id: 123
+    }, {
+      lng: 78.6382,
+      lat: 9.6615,
+      labelStyle: {
+        color: 'black'
+      },
+      style: {
+        backgroundColor: 'white'
+      },
+      label: 'Job1 fghhh fyfyhfy ',
+      _id: 1234
+    }, {
+      lng: 80.0255,
+      lat: 9.6615,
+      style: {
+        backgroundColor: 'green'
+      },
+      label: 'Job2',
+      _id: 12345
+    }],
+    onMarkerLabelClick: onMarkerLabelClick // mapTypeId="hybrid"
+    //For select the location
+    // isLocationSelectable={true}
+    // onLocationSelect={onLocationSelect}
+    //search box
     ,
     isEnabledSearchBox: true,
     searchBoxStyle: {

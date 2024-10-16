@@ -57,7 +57,7 @@ var TKDatePicker = function TKDatePicker(props) {
       dateFormat = props.dateFormat,
       returnFormat = props.returnFormat,
       handleTimeChange = props.handleTimeChange;
-  var myRef = /*#__PURE__*/(0, _react.createRef)();
+  var calenderRef = /*#__PURE__*/(0, _react.createRef)();
 
   var _useState = (0, _react.useState)(value ? new Date(value) : new Date()),
       _useState2 = _slicedToArray(_useState, 2),
@@ -116,7 +116,11 @@ var TKDatePicker = function TKDatePicker(props) {
       }
 
       setDateRange(val);
-      if (val[0] && val[1]) handleOnChange([(0, _moment.default)(val[0]).format(returnFormat), (0, _moment.default)(val[1]).format(returnFormat)], refer);
+
+      if (val[0] && val[1]) {
+        calenderRef.current.setOpen(false);
+        handleOnChange([(0, _moment.default)(val[0]).format(returnFormat), (0, _moment.default)(val[1]).format(returnFormat)], refer);
+      }
     } else {
       setDate(val);
       handleOnChange((0, _moment.default)(val).format(returnFormat), refer);
@@ -136,7 +140,9 @@ var TKDatePicker = function TKDatePicker(props) {
     style: {
       fontSize: '14px'
     }
-  }, label), /*#__PURE__*/_react.default.createElement(_reactDatepicker.default, _extends({}, props, {
+  }, label), /*#__PURE__*/_react.default.createElement(_reactDatepicker.default, _extends({
+    ref: calenderRef
+  }, props, {
     startDate: startDate,
     endDate: endDate,
     onChange: handleDateChange,
@@ -145,7 +151,8 @@ var TKDatePicker = function TKDatePicker(props) {
     placeholderText: placeholder,
     highlightDates: props.selectsMultiple ? selectedDates : [date],
     selected: date,
-    onCalendarClose: handleCalendarClose
+    onCalendarClose: handleCalendarClose,
+    shouldCloseOnSelect: true
   })));
 };
 

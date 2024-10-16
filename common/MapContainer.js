@@ -156,7 +156,10 @@ var Map = (0, _recompose.compose)((0, _recompose.withStateHandlers)(function (pr
       style: markerData.style,
       labelStyle: markerData.labelStyle,
       onClick: function onClick() {
-        return props.onMarkerLabelClick(markerData._id);
+        return props.onMarkerLabelClick(markerData._id, {
+          lat: mapRef.getCenter().lat(),
+          lng: mapRef.getCenter().lng()
+        });
       }
     });
   }));
@@ -183,8 +186,8 @@ var MapContainer = function MapContainer(props) {
       markerPosition = _useState6[0],
       setMarkerPosition = _useState6[1];
 
-  var onMarkerLabelClick = function onMarkerLabelClick(e) {
-    if (props.onMarkerLabelClick) props.onMarkerLabelClick(e);
+  var onMarkerLabelClick = function onMarkerLabelClick(e, center) {
+    if (props.onMarkerLabelClick) props.onMarkerLabelClick(e, center);
   };
 
   var onLocationSelect = function onLocationSelect(e) {
