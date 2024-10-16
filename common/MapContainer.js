@@ -187,7 +187,11 @@ var MapContainer = function MapContainer(props) {
       setMarkerPosition = _useState6[1];
 
   var onMarkerLabelClick = function onMarkerLabelClick(e, center) {
-    if (props.onMarkerLabelClick) props.onMarkerLabelClick(e, center);
+    if (props.onMarkerLabelClick) props.onMarkerLabelClick(e);
+    setContent({
+      longitude: center.lng,
+      latitude: center.lat
+    });
   };
 
   var onLocationSelect = function onLocationSelect(e) {

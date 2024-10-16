@@ -332,7 +332,7 @@ var Test = function Test() {
       longitude: 80.1255,
       latitude: 9.6615
     },
-    apiKey: "XXX",
+    apiKey: "xxxxxx",
     defaultZoom: 12,
     isShowInfoWindow: false,
     disableOnMarkerClick: true,
