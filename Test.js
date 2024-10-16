@@ -181,6 +181,9 @@ var Test = function Test() {
 
   var onMarkerLabelClick = function onMarkerLabelClick(id, content) {
     console.log("FFF", id, content);
+    setCreateReq(_objectSpread(_objectSpread({}, createReq), {}, {
+      content: content
+    }));
   };
 
   var onLocationSelect = function onLocationSelect(lat, lng) {
@@ -329,7 +332,7 @@ var Test = function Test() {
       longitude: 80.1255,
       latitude: 9.6615
     },
-    apiKey: "AIzaSyBHm5OVaa6_9-ILgDZ9YSrTnaCQNT6ZXec",
+    apiKey: "XXX",
     defaultZoom: 12,
     isShowInfoWindow: false,
     disableOnMarkerClick: true,
